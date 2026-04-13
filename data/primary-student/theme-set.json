@@ -1,0 +1,42 @@
+﻿{
+  "id": "primary-student",
+  "name": "当前小学生类型",
+  "hero": {
+    "title": "测测你是当前哪种小学生类型",
+    "startButton": "开始测试",
+    "authorLine": "模拟主题：当前小学生类型"
+  },
+  "hints": {
+    "answerGate": "请答完全部可见题目后再提交。",
+    "hiddenDimension": "维度已隐藏",
+    "specialQuestion": "补充题",
+    "complete": "测试已完成",
+    "completeTip": "全部题目已答完，点击“提交并查看结果”。"
+  },
+  "actions": {
+    "backHome": "返回首页",
+    "submit": "提交并查看结果",
+    "restart": "重新测试",
+    "resultHome": "回到首页",
+    "shareImage": "生成结果分享图"
+  },
+  "resultText": {
+    "roleTitle": "你的当前类型",
+    "defaultBadge": "匹配度 {similarity}%",
+    "defaultNote": "这是你当前阶段的行为画像，不是永久标签。",
+    "simpleInterpretation": "类型解读",
+    "dimensions": "六维度评分",
+    "tipTitle": "友情提示",
+    "tipContent": "本测试为娱乐化模拟，不可替代教育评估或专业诊断。",
+    "authorTitle": "说明",
+    "authorParagraphs": [
+      "该主题用于验证测试引擎的复用能力。",
+      "题目和类型为模拟设计，结果仅供娱乐参考。"
+    ],
+    "normalTopPrefix": "常规模板第一名"
+  },
+  "assets": {
+    "imageManifestPath": "",
+    "imageBasePath": ""
+  }
+}

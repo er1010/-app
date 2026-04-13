@@ -1,0 +1,69 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SBTI 人格测试（仿制）</title>
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="home-screen" class="screen active" aria-labelledby="home-title">
+        <h1 id="home-title">MBTI已经过时，SBTI来了。</h1>
+        <div class="theme-switch" role="group" aria-label="主题切换">
+          <button id="theme-sbti-btn" class="theme-btn active" type="button" data-theme-id="sbti">SBTI 主题</button>
+          <button id="theme-primary-btn" class="theme-btn" type="button" data-theme-id="primary-student">当前小学生类型</button>
+        </div>
+        <button id="start-test-btn" class="primary-btn">开始测试</button>
+        <p id="home-author-line" class="muted">原作者：B站@蛆肉儿串儿</p>
+      </section>
+
+      <section id="test-screen" class="screen" aria-labelledby="question-title">
+        <p id="progress-text" class="progress">0 / 31</p>
+        <p id="answer-gate-text" class="hint">全选完才会放行。世界已经够乱了，起码把题做完整。</p>
+
+        <article id="question-card" class="question-card">
+          <p id="meta-label" class="meta-label">维度已隐藏</p>
+          <h2 id="question-title">题目加载中...</h2>
+          <div id="options-wrap" class="options-wrap"></div>
+        </article>
+
+        <div class="action-row">
+          <button id="back-home-btn" class="ghost-btn">返回首页</button>
+          <button id="submit-btn" class="primary-btn" disabled>提交并查看结果</button>
+        </div>
+      </section>
+
+      <section id="result-screen" class="screen" aria-labelledby="result-type-code">
+        <p id="result-intro" class="result-intro">怎么样，被我拿捏了吧？</p>
+        <p id="result-role-title" class="muted">你的主类型</p>
+        <h2 id="result-type-code">CTRL（拿捏者）</h2>
+        <p id="result-badge" class="badge">匹配度 92%</p>
+        <p id="result-note" class="system-note">系统备注会显示在这里。</p>
+
+        <img id="result-image" class="result-image" alt="人格海报" hidden />
+
+        <h3 id="result-interpretation-title">该人格的简单解读</h3>
+        <p id="result-desc" class="result-desc"></p>
+
+        <h3 id="result-dimensions-title">十五维度评分</h3>
+        <ul id="dimension-list" class="dimension-list"></ul>
+
+        <h3 id="result-tip-title">友情提示</h3>
+        <p id="result-tip-content" class="muted"></p>
+
+        <h3 id="result-author-title">作者的话</h3>
+        <div id="result-author-lines" class="muted-block"></div>
+
+        <div class="action-row">
+          <button id="share-image-btn" class="ghost-btn">生成分享图</button>
+          <button id="restart-btn" class="primary-btn">重新测试</button>
+          <button id="result-home-btn" class="ghost-btn">回到首页</button>
+        </div>
+        <p id="share-status" class="share-status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

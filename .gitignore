@@ -1,0 +1,17 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+
+.vscode/
+.idea/
+
+node_modules/
+dist/
+coverage/
+
+__pycache__/
+*.pyc
+
+*.log
+
+sbti-cli/.git.backup/

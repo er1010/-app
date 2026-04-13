@@ -1,0 +1,24 @@
+{
+  "similarityDistanceDenominator": 30,
+  "fallbackSimilarityThreshold": 60,
+  "specialOverrides": [
+    {
+      "type": "force_result",
+      "when": {
+        "questionId": "drink_gate_q2",
+        "equals": 2
+      },
+      "resultCode": "DRUNK",
+      "keepBestNormalAsSecondary": true,
+      "badgeTemplate": "匹配度 100%",
+      "note": "隐藏人格已激活：酒精异常因子已接管，常规人格仅供参考。"
+    }
+  ],
+  "fallbackRule": {
+    "type": "min_similarity",
+    "threshold": 60,
+    "fallbackResultCode": "HHHH",
+    "badgeTemplate": "标准人格库最高匹配仅 {similarity}%",
+    "note": "系统强制兜底：标准人格库匹配偏低，已分配到 HHHH。"
+  }
+}

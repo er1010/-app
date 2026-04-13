@@ -1,0 +1,162 @@
+﻿{
+  "regularQuestions": [
+    {
+      "id": "q1",
+      "dim": "A1",
+      "text": "老师布置新任务时，你通常？",
+      "options": [
+        { "label": "先拖一拖，等催了再说", "value": 1 },
+        { "label": "看心情完成", "value": 2 },
+        { "label": "主动安排时间先做完", "value": 3 }
+      ]
+    },
+    {
+      "id": "q2",
+      "dim": "A1",
+      "text": "遇到不会的题，你更像？",
+      "options": [
+        { "label": "先放弃，等别人讲", "value": 1 },
+        { "label": "问同学后再做", "value": 2 },
+        { "label": "会主动查资料或请教老师直到弄懂", "value": 3 }
+      ]
+    },
+    {
+      "id": "q3",
+      "dim": "A2",
+      "text": "放学后的作业节奏是？",
+      "options": [
+        { "label": "能拖到最后一刻就拖", "value": 1 },
+        { "label": "分段完成，偶尔卡住", "value": 2 },
+        { "label": "先难后易，按计划做完", "value": 3 }
+      ]
+    },
+    {
+      "id": "q4",
+      "dim": "A2",
+      "text": "需要抄写或背诵时，你会？",
+      "options": [
+        { "label": "经常漏项", "value": 1 },
+        { "label": "基本完成", "value": 2 },
+        { "label": "按要求完整完成并自查", "value": 3 }
+      ]
+    },
+    {
+      "id": "q5",
+      "dim": "A3",
+      "text": "上课时注意力情况？",
+      "options": [
+        { "label": "经常走神", "value": 1 },
+        { "label": "偶尔分心", "value": 2 },
+        { "label": "大多时候能专注听讲", "value": 3 }
+      ]
+    },
+    {
+      "id": "q6",
+      "dim": "A3",
+      "text": "老师提问时，你通常？",
+      "options": [
+        { "label": "尽量躲开", "value": 1 },
+        { "label": "点到就答", "value": 2 },
+        { "label": "会主动举手表达", "value": 3 }
+      ]
+    },
+    {
+      "id": "q7",
+      "dim": "S1",
+      "text": "在班里和新同学相处时，你更常？",
+      "options": [
+        { "label": "不太说话", "value": 1 },
+        { "label": "熟悉后再聊", "value": 2 },
+        { "label": "主动打招呼并一起玩", "value": 3 }
+      ]
+    },
+    {
+      "id": "q8",
+      "dim": "S1",
+      "text": "小组合作时，你更像？",
+      "options": [
+        { "label": "跟着别人走", "value": 1 },
+        { "label": "完成自己部分", "value": 2 },
+        { "label": "会组织分工和沟通", "value": 3 }
+      ]
+    },
+    {
+      "id": "q9",
+      "dim": "S2",
+      "text": "老师不在教室时，你通常？",
+      "options": [
+        { "label": "容易跟着起哄", "value": 1 },
+        { "label": "看周围再决定", "value": 2 },
+        { "label": "会自觉保持秩序", "value": 3 }
+      ]
+    },
+    {
+      "id": "q10",
+      "dim": "S2",
+      "text": "排队或做操时，你会？",
+      "options": [
+        { "label": "总想插队或偷懒", "value": 1 },
+        { "label": "偶尔不规范", "value": 2 },
+        { "label": "基本按规则来", "value": 3 }
+      ]
+    },
+    {
+      "id": "q11",
+      "dim": "L1",
+      "text": "整理书包和课桌时，你通常？",
+      "options": [
+        { "label": "很乱，常找不到东西", "value": 1 },
+        { "label": "偶尔整理", "value": 2 },
+        { "label": "每天都能收拾得比较整齐", "value": 3 }
+      ]
+    },
+    {
+      "id": "q12",
+      "dim": "L1",
+      "text": "早晨上学准备情况？",
+      "options": [
+        { "label": "常忘带作业或用品", "value": 1 },
+        { "label": "偶尔遗漏", "value": 2 },
+        { "label": "能提前准备好", "value": 3 }
+      ]
+    }
+  ],
+  "specialQuestions": [
+    {
+      "id": "game_gate_q1",
+      "special": true,
+      "kind": "game_gate",
+      "text": "周末最想做的事是？",
+      "options": [
+        { "label": "复习+完成任务", "value": 1 },
+        { "label": "户外运动或社交活动", "value": 2 },
+        { "label": "打游戏", "value": 3 },
+        { "label": "看动画或刷短视频", "value": 4 }
+      ]
+    },
+    {
+      "id": "game_gate_q2",
+      "special": true,
+      "kind": "game_trigger",
+      "text": "如果开始打游戏，你更接近？",
+      "options": [
+        { "label": "玩一会就停，不影响作息", "value": 1 },
+        { "label": "再来一局，常常停不下来", "value": 2 }
+      ]
+    }
+  ],
+  "flow": {
+    "insertQuestionId": "game_gate_q1",
+    "insertMode": "random_after_first",
+    "conditionalQuestions": [
+      {
+        "id": "game_gate_q2",
+        "when": {
+          "questionId": "game_gate_q1",
+          "equals": 3
+        },
+        "insertAfter": "game_gate_q1"
+      }
+    ]
+  }
+}
