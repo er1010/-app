@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
@@ -12,7 +12,7 @@
         <h1 id="home-title">MBTI已经过时，SBTI来了。</h1>
         <div class="theme-switch" role="group" aria-label="主题切换">
           <button id="theme-sbti-btn" class="theme-btn active" type="button" data-theme-id="sbti">SBTI 主题</button>
-          <button id="theme-primary-btn" class="theme-btn" type="button" data-theme-id="primary-student">当前小学生类型</button>
+          <button id="theme-primary-btn" class="theme-btn" type="button" data-theme-id="primary-student">小学生画像 v2</button>
         </div>
         <button id="start-test-btn" class="primary-btn">开始测试</button>
         <p id="home-author-line" class="muted">原作者：B站@蛆肉儿串儿</p>
@@ -41,10 +41,28 @@
         <p id="result-badge" class="badge">匹配度 92%</p>
         <p id="result-note" class="system-note">系统备注会显示在这里。</p>
 
+        <section id="result-secondary-card" class="secondary-card" hidden>
+          <p id="result-secondary-title" class="muted">副类型参考</p>
+          <p id="result-secondary-type" class="secondary-type"></p>
+          <p id="result-secondary-note" class="secondary-note"></p>
+        </section>
+
         <img id="result-image" class="result-image" alt="人格海报" hidden />
 
         <h3 id="result-interpretation-title">该人格的简单解读</h3>
         <p id="result-desc" class="result-desc"></p>
+
+        <div class="insight-grid">
+          <section id="result-strengths-section" class="insight-panel" hidden>
+            <h3 id="result-strengths-title">画像亮点</h3>
+            <ul id="result-strengths-list" class="insight-list"></ul>
+          </section>
+
+          <section id="result-guidance-section" class="insight-panel" hidden>
+            <h3 id="result-guidance-title">成长建议</h3>
+            <ul id="result-guidance-list" class="insight-list"></ul>
+          </section>
+        </div>
 
         <h3 id="result-dimensions-title">十五维度评分</h3>
         <ul id="dimension-list" class="dimension-list"></ul>

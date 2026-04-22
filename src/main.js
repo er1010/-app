@@ -1,4 +1,4 @@
-﻿import { loadThemePack } from "./theme-loader.js";
+import { loadThemePack } from "./theme-loader.js";
 import { createQuestionBank } from "./core/question-bank.js";
 import { createFlowEngine } from "./core/flow-engine.js";
 import { createScoringEngine } from "./core/scoring-engine.js";
@@ -37,11 +37,21 @@ const dom = {
   resultTypeCode: document.getElementById("result-type-code"),
   resultBadge: document.getElementById("result-badge"),
   resultNote: document.getElementById("result-note"),
+  resultSecondaryCard: document.getElementById("result-secondary-card"),
+  resultSecondaryTitle: document.getElementById("result-secondary-title"),
+  resultSecondaryType: document.getElementById("result-secondary-type"),
+  resultSecondaryNote: document.getElementById("result-secondary-note"),
   resultImage: document.getElementById("result-image"),
   resultInterpretationTitle: document.getElementById("result-interpretation-title"),
   resultDesc: document.getElementById("result-desc"),
+  resultStrengthsSection: document.getElementById("result-strengths-section"),
+  resultStrengthsTitle: document.getElementById("result-strengths-title"),
+  resultStrengthsList: document.getElementById("result-strengths-list"),
   resultDimensionsTitle: document.getElementById("result-dimensions-title"),
   dimensionList: document.getElementById("dimension-list"),
+  resultGuidanceSection: document.getElementById("result-guidance-section"),
+  resultGuidanceTitle: document.getElementById("result-guidance-title"),
+  resultGuidanceList: document.getElementById("result-guidance-list"),
   resultTipTitle: document.getElementById("result-tip-title"),
   resultTipContent: document.getElementById("result-tip-content"),
   resultAuthorTitle: document.getElementById("result-author-title"),
@@ -74,7 +84,10 @@ function applyThemeTexts(themeSet) {
 
   dom.resultRoleTitle.textContent = themeSet.resultText.roleTitle;
   dom.resultInterpretationTitle.textContent = themeSet.resultText.simpleInterpretation;
+  dom.resultSecondaryTitle.textContent = themeSet.resultText.secondaryTitle ?? "副类型参考";
+  dom.resultStrengthsTitle.textContent = themeSet.resultText.strengthsTitle ?? "画像亮点";
   dom.resultDimensionsTitle.textContent = themeSet.resultText.dimensions;
+  dom.resultGuidanceTitle.textContent = themeSet.resultText.guidanceTitle ?? "成长建议";
   dom.resultTipTitle.textContent = themeSet.resultText.tipTitle;
   dom.resultTipContent.textContent = themeSet.resultText.tipContent;
   dom.resultAuthorTitle.textContent = themeSet.resultText.authorTitle;
@@ -139,17 +152,112 @@ function renderTest() {
   });
 }
 
+function createInsightListItems(listElement, items) {
+  listElement.innerHTML = "";
+
+  items.forEach((text) => {
+    const item = document.createElement("li");
+    item.textContent = text;
+    listElement.appendChild(item);
+  });
+}
+
+function getRankedDimensions(result) {
+  const { dimensionSet } = state.themePack;
+  const scoreMap = result.scoring.displayScores ?? result.scoring.rawScores;
+
+  return dimensionSet.dimensionOrder
+    .map((dimensionId) => ({
+      id: dimensionId,
+      meta: dimensionSet.dimensionMeta[dimensionId],
+      score: Number(scoreMap?.[dimensionId] ?? 0),
+      level: result.scoring.levels[dimensionId]
+    }))
+    .sort((left, right) => {
+      if (right.score !== left.score) {
+        return right.score - left.score;
+      }
+      return left.id.localeCompare(right.id);
+    });
+}
+
+function renderInsightSections(result) {
+  const { themeSet, dimensionSet } = state.themePack;
+  const rankedDimensions = getRankedDimensions(result);
+
+  const strengths = rankedDimensions.slice(0, 3).map((item) => {
+    const hint =
+      item.meta?.strengthHint ??
+      dimensionSet.explanations?.[item.id]?.[item.level] ??
+      "这是你比较突出的一个维度。";
+    return `${item.meta.name}：${hint}`;
+  });
+
+  const watchDimensions = [...rankedDimensions]
+    .sort((left, right) => left.score - right.score)
+    .slice(0, 3);
+
+  const guidance = [
+    ...(result.finalType.growthTips ?? []),
+    ...watchDimensions.map((item) => {
+      const hint = item.meta?.coachingHint ?? "可以从更小的练习目标开始，慢慢把这一项抬起来。";
+      return `${item.meta.name}：${hint}`;
+    })
+  ].slice(0, Number(themeSet.resultText.guidanceLimit ?? 4));
+
+  dom.resultStrengthsSection.hidden = strengths.length === 0;
+  dom.resultGuidanceSection.hidden = guidance.length === 0;
+
+  createInsightListItems(dom.resultStrengthsList, strengths);
+  createInsightListItems(dom.resultGuidanceList, guidance);
+}
+
 function renderDimensionList(result) {
   const { dimensionSet } = state.themePack;
+  const scoreMap = result.scoring.displayScores ?? result.scoring.rawScores;
+  const defaultMax = Math.max(1, ...Object.values(scoreMap).map((value) => Number(value)));
+  const maxScore = Number(result.scoring.scoreRange?.max ?? defaultMax);
+
   dom.dimensionList.innerHTML = "";
 
   dimensionSet.dimensionOrder.forEach((dimensionId) => {
     const item = document.createElement("li");
+    item.className = "dimension-item";
+
     const meta = dimensionSet.dimensionMeta[dimensionId];
     const level = result.scoring.levels[dimensionId];
-    const score = result.scoring.rawScores[dimensionId];
+    const score = Number(scoreMap?.[dimensionId] ?? 0);
     const explanation = dimensionSet.explanations?.[dimensionId]?.[level] ?? "";
-    item.textContent = `${meta.name}：${level} / ${score}分。${explanation}`;
+    const percentage = Math.max(0, Math.min(100, Math.round((score / maxScore) * 100)));
+
+    const header = document.createElement("div");
+    header.className = "dimension-topline";
+
+    const name = document.createElement("strong");
+    name.className = "dimension-name";
+    name.textContent = meta.name;
+
+    const stat = document.createElement("span");
+    stat.className = "dimension-score";
+    stat.textContent = `${score} / ${maxScore} · ${level}`;
+
+    const meter = document.createElement("div");
+    meter.className = "dimension-meter";
+
+    const fill = document.createElement("span");
+    fill.className = "dimension-fill";
+    fill.style.width = `${percentage}%`;
+
+    const desc = document.createElement("p");
+    desc.className = "dimension-explanation";
+    desc.textContent = explanation;
+
+    header.appendChild(name);
+    header.appendChild(stat);
+    meter.appendChild(fill);
+    item.appendChild(header);
+    item.appendChild(meter);
+    item.appendChild(desc);
     dom.dimensionList.appendChild(item);
   });
 }
@@ -165,10 +273,23 @@ function renderResult() {
   dom.resultIntro.textContent = type.intro;
   dom.resultTypeCode.textContent = `${type.code}（${type.cn}）`;
   dom.resultBadge.textContent = result.badge;
-  dom.resultNote.textContent = result.secondaryType
-    ? `${result.note} ${themeSet.resultText.normalTopPrefix}：${result.secondaryType.code}（${result.secondaryType.cn}）`
-    : result.note;
+  dom.resultNote.textContent = result.note;
   dom.resultDesc.textContent = type.desc;
+
+  if (result.secondaryType) {
+    dom.resultSecondaryCard.hidden = false;
+    dom.resultSecondaryType.textContent = `${result.secondaryType.code}（${result.secondaryType.cn}）`;
+    dom.resultSecondaryNote.textContent =
+      themeSet.resultText.secondaryNoteTemplate
+        ? themeSet.resultText.secondaryNoteTemplate
+            .replace("{secondaryCode}", result.secondaryType.code)
+            .replace("{secondaryCn}", result.secondaryType.cn)
+        : `你身上也带着 ${result.secondaryType.cn} 的风格。`;
+  } else {
+    dom.resultSecondaryCard.hidden = true;
+    dom.resultSecondaryType.textContent = "";
+    dom.resultSecondaryNote.textContent = "";
+  }
 
   const fileName = imageMap.get(type.code);
   if (fileName) {
@@ -182,6 +303,7 @@ function renderResult() {
     dom.resultImage.removeAttribute("src");
   }
 
+  renderInsightSections(result);
   renderDimensionList(result);
 }
 
@@ -199,9 +321,6 @@ function submitResult() {
   }
 
   const answers = state.flowEngine.getAnswers();
-  // 结果计算两段式：
-  // 1) ScoringEngine 产出维度原始分/LMH/向量；
-  // 2) ResultEngine 基于向量做模板匹配 + 特殊覆盖/兜底。
   const scoring = state.scoringEngine.score(answers, state.questionBank.regularQuestions);
   const resolved = state.resultEngine.resolveResult({ answers, scoring });
 
@@ -224,7 +343,8 @@ async function handleShareImage() {
   try {
     await downloadResultShareImage({
       result: state.result,
-      imageUrl: state.currentResultImageUrl
+      imageUrl: state.currentResultImageUrl,
+      title: `${state.themePack.themeSet.name} 结果`
     });
     dom.shareStatus.textContent = "分享图已生成并开始下载。";
   } catch {
@@ -303,6 +423,7 @@ async function init() {
     typeSet: themePack.typeSet
   });
   state.resultEngine = createResultEngine({
+    dimensionSet: themePack.dimensionSet,
     typeSet: themePack.typeSet,
     ruleSet: themePack.ruleSet,
     themeSet: themePack.themeSet

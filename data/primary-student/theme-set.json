@@ -1,13 +1,13 @@
-﻿{
+{
   "id": "primary-student",
-  "name": "当前小学生类型",
+  "name": "小学生画像 v2",
   "hero": {
-    "title": "测测你是当前哪种小学生类型",
-    "startButton": "开始测试",
-    "authorLine": "模拟主题：当前小学生类型"
+    "title": "测测你是哪种现代小学生画像",
+    "startButton": "开始画像测试",
+    "authorLine": "基于 GROK 报告整理稿的 10 维度迭代版"
   },
   "hints": {
-    "answerGate": "请答完全部可见题目后再提交。",
+    "answerGate": "请答完全部题目后再提交，这一版会输出主类型、副类型和 10 维画像。",
     "hiddenDimension": "维度已隐藏",
     "specialQuestion": "补充题",
     "complete": "测试已完成",
@@ -21,17 +21,22 @@
     "shareImage": "生成结果分享图"
   },
   "resultText": {
-    "roleTitle": "你的当前类型",
-    "defaultBadge": "匹配度 {similarity}%",
-    "defaultNote": "这是你当前阶段的行为画像，不是永久标签。",
-    "simpleInterpretation": "类型解读",
-    "dimensions": "六维度评分",
-    "tipTitle": "友情提示",
-    "tipContent": "本测试为娱乐化模拟，不可替代教育评估或专业诊断。",
+    "roleTitle": "你的主画像",
+    "defaultBadge": "主画像匹配度 {similarity}%",
+    "defaultNote": "这是一张成长画像，不是永久标签，更适合拿来观察优势和短板。",
+    "simpleInterpretation": "画像解读",
+    "secondaryTitle": "副类型参考",
+    "secondaryNoteTemplate": "你身上也带着 {secondaryCn} 的风格，属于比较常见的混合型画像。",
+    "strengthsTitle": "画像亮点",
+    "dimensions": "10 维详细评分",
+    "guidanceTitle": "成长建议",
+    "guidanceLimit": 4,
+    "tipTitle": "使用提示",
+    "tipContent": "高分维度适合继续鼓励和保护，低分维度更适合拆成小练习慢慢提升。",
     "authorTitle": "说明",
     "authorParagraphs": [
-      "该主题用于验证测试引擎的复用能力。",
-      "题目和类型为模拟设计，结果仅供娱乐参考。"
+      "这版主题基于《现代小学生 10 大潮酷性格分型 + 10 维度评分标准》结构化整理稿落地。",
+      "实现方式仍沿用现有项目的题库 + 评分 + 模板匹配框架，但结果展示升级成更完整的成长画像。"
     ],
     "normalTopPrefix": "常规模板第一名"
   },
