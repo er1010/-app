@@ -7,20 +7,102 @@
     <link rel="stylesheet" href="./app.css" />
   </head>
   <body>
+    <div class="page-graffiti" aria-hidden="true">
+      <span class="graffiti-mark mark-zap">ZAP</span>
+      <span class="graffiti-mark mark-boom">BOOM</span>
+      <span class="graffiti-mark mark-star">★</span>
+      <span class="graffiti-mark mark-arrow">➜</span>
+      <span class="graffiti-mark mark-bolt">⚡</span>
+      <span class="graffiti-mark mark-squiggle">~~~</span>
+    </div>
+    <div class="page-sparkles" aria-hidden="true">
+      <span class="spark spark-a">🌈</span>
+      <span class="spark spark-b">⭐</span>
+      <span class="spark spark-c">🪐</span>
+      <span class="spark spark-d">🧸</span>
+      <span class="spark spark-e">🎈</span>
+    </div>
+
     <main class="app-shell">
       <section id="home-screen" class="screen active" aria-labelledby="home-title">
-        <h1 id="home-title">MBTI已经过时，SBTI来了。</h1>
-        <div class="theme-switch" role="group" aria-label="主题切换">
-          <button id="theme-sbti-btn" class="theme-btn active" type="button" data-theme-id="sbti">SBTI 主题</button>
-          <button id="theme-primary-btn" class="theme-btn" type="button" data-theme-id="primary-student">小学生画像 v2</button>
+        <div class="hero-card">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <div class="hero-stickers" aria-hidden="true">
+                <span class="sticker sticker-pink">POP QUIZ</span>
+                <span class="sticker sticker-cyan">KID LAB</span>
+                <span class="sticker sticker-yellow">WOW!</span>
+              </div>
+              <p class="hero-kicker">小学版成长画像实验室</p>
+              <h1 id="home-title">MBTI已经过时，SBTI来了。</h1>
+              <p class="hero-subtitle">把性格测试做成漫画海报和贴纸拼贴，用更有冲击力的方式看见你的优势、习惯和成长任务。</p>
+
+              <div class="theme-switch" role="group" aria-label="主题切换">
+                <button id="theme-sbti-btn" class="theme-btn active" type="button" data-theme-id="sbti">SBTI 主题</button>
+                <button id="theme-primary-btn" class="theme-btn" type="button" data-theme-id="primary-student">小学画像 🎒</button>
+              </div>
+
+              <div class="hero-actions">
+                <button id="start-test-btn" class="primary-btn primary-btn-hero">开始测试</button>
+                <p id="home-author-line" class="muted hero-note">原作者：B站@蛆肉儿串儿</p>
+              </div>
+
+              <p class="hero-caption">像翻一本街头涂鸦 zine：先被吸引，再被看懂，最后带着一点“我确实有点厉害”的感觉离开。</p>
+            </div>
+
+            <aside class="hero-art" aria-hidden="true">
+              <div class="hero-burst">BE A<br />CLIMATE<br />HERO!</div>
+              <div class="hero-poster">
+                <p class="hero-poster-tag">SBTI HERO FILE</p>
+                <div class="hero-orbit">
+                  <div class="hero-planet">
+                    <span class="hero-planet-face">☺</span>
+                  </div>
+                  <span class="orbit orbit-a"></span>
+                  <span class="orbit orbit-b"></span>
+                  <span class="orbit orbit-c"></span>
+                </div>
+                <ul class="hero-stat-list">
+                  <li><strong>10</strong><span>维成长画像</span></li>
+                  <li><strong>31</strong><span>题节奏推进</span></li>
+                  <li><strong>100%</strong><span>海报感结果页</span></li>
+                </ul>
+              </div>
+              <span class="hero-float hero-float-star">★</span>
+              <span class="hero-float hero-float-arrow">➜</span>
+              <span class="hero-float hero-float-bolt">⚡</span>
+            </aside>
+          </div>
         </div>
-        <button id="start-test-btn" class="primary-btn">开始测试</button>
-        <p id="home-author-line" class="muted">原作者：B站@蛆肉儿串儿</p>
+
+        <div class="feature-row" aria-hidden="true">
+          <article class="feature-card feature-card-pink">
+            <p class="feature-card-tag">POSTER 01</p>
+            <p class="feature-card-title">潮酷分型</p>
+            <p class="feature-card-copy">不是平平无奇的答题器，是第一眼就有态度的海报首页。</p>
+          </article>
+          <article class="feature-card feature-card-cyan">
+            <p class="feature-card-tag">POSTER 02</p>
+            <p class="feature-card-title">10 维画像</p>
+            <p class="feature-card-copy">题目、分维度、结果强弱关系都被放进更有记忆点的视觉语言里。</p>
+          </article>
+          <article class="feature-card feature-card-yellow">
+            <p class="feature-card-tag">POSTER 03</p>
+            <p class="feature-card-title">成长建议</p>
+            <p class="feature-card-copy">高亮优势，标出任务卡，让结果页也像一本可收藏的小杂志。</p>
+          </article>
+        </div>
       </section>
 
-      <section id="test-screen" class="screen" aria-labelledby="question-title">
-        <p id="progress-text" class="progress">0 / 31</p>
-        <p id="answer-gate-text" class="hint">全选完才会放行。世界已经够乱了，起码把题做完整。</p>
+      <section id="test-screen" class="screen screen-test" aria-labelledby="question-title">
+        <div class="screen-banner" aria-hidden="true">
+          <span>QUESTION DROP</span>
+          <span>NO SKIP MODE</span>
+        </div>
+        <div class="screen-header">
+          <p id="progress-text" class="progress">0 / 31</p>
+          <p id="answer-gate-text" class="hint">全选完才会放行。世界已经够乱了，起码把题做完整。</p>
+        </div>
 
         <article id="question-card" class="question-card">
           <p id="meta-label" class="meta-label">维度已隐藏</p>
@@ -34,51 +116,65 @@
         </div>
       </section>
 
-      <section id="result-screen" class="screen" aria-labelledby="result-type-code">
-        <p id="result-intro" class="result-intro">怎么样，被我拿捏了吧？</p>
-        <p id="result-role-title" class="muted">你的主类型</p>
-        <h2 id="result-type-code">CTRL（拿捏者）</h2>
-        <p id="result-badge" class="badge">匹配度 92%</p>
-        <p id="result-note" class="system-note">系统备注会显示在这里。</p>
+      <section id="result-screen" class="screen screen-result" aria-labelledby="result-type-code">
+        <div class="result-shell">
+          <div class="screen-banner screen-banner-result" aria-hidden="true">
+            <span>RESULT DROP</span>
+            <span>YOUR HERO POSTER</span>
+          </div>
 
-        <section id="result-secondary-card" class="secondary-card" hidden>
-          <p id="result-secondary-title" class="muted">副类型参考</p>
-          <p id="result-secondary-type" class="secondary-type"></p>
-          <p id="result-secondary-note" class="secondary-note"></p>
-        </section>
+          <div class="result-top">
+            <div class="result-copy">
+              <p id="result-intro" class="result-intro">怎么样，被我拿捏了吧？</p>
+              <p id="result-role-title" class="muted">你的主类型</p>
+              <h2 id="result-type-code">CTRL（拿捏者）</h2>
+              <p id="result-badge" class="badge">匹配度 92%</p>
+              <p id="result-note" class="system-note">系统备注会显示在这里。</p>
 
-        <img id="result-image" class="result-image" alt="人格海报" hidden />
+              <section id="result-secondary-card" class="secondary-card" hidden>
+                <p id="result-secondary-title" class="muted">副类型参考</p>
+                <p id="result-secondary-type" class="secondary-type"></p>
+                <p id="result-secondary-note" class="secondary-note"></p>
+              </section>
+            </div>
 
-        <h3 id="result-interpretation-title">该人格的简单解读</h3>
-        <p id="result-desc" class="result-desc"></p>
+            <div class="result-poster-wrap">
+              <span class="result-poster-sticker">TOP TYPE</span>
+              <img id="result-image" class="result-image" alt="人格海报" hidden />
+            </div>
+          </div>
 
-        <div class="insight-grid">
-          <section id="result-strengths-section" class="insight-panel" hidden>
-            <h3 id="result-strengths-title">画像亮点</h3>
-            <ul id="result-strengths-list" class="insight-list"></ul>
-          </section>
+          <h3 id="result-interpretation-title">该人格的简单解读</h3>
+          <p id="result-desc" class="result-desc"></p>
 
-          <section id="result-guidance-section" class="insight-panel" hidden>
-            <h3 id="result-guidance-title">成长建议</h3>
-            <ul id="result-guidance-list" class="insight-list"></ul>
-          </section>
+          <div class="insight-grid">
+            <section id="result-strengths-section" class="insight-panel" hidden>
+              <h3 id="result-strengths-title">画像亮点</h3>
+              <ul id="result-strengths-list" class="insight-list"></ul>
+            </section>
+
+            <section id="result-guidance-section" class="insight-panel" hidden>
+              <h3 id="result-guidance-title">成长建议</h3>
+              <ul id="result-guidance-list" class="insight-list"></ul>
+            </section>
+          </div>
+
+          <h3 id="result-dimensions-title">十五维度评分</h3>
+          <ul id="dimension-list" class="dimension-list"></ul>
+
+          <h3 id="result-tip-title">友情提示</h3>
+          <p id="result-tip-content" class="muted"></p>
+
+          <h3 id="result-author-title">作者的话</h3>
+          <div id="result-author-lines" class="muted-block"></div>
+
+          <div class="action-row">
+            <button id="share-image-btn" class="ghost-btn">生成分享图</button>
+            <button id="restart-btn" class="primary-btn">重新测试</button>
+            <button id="result-home-btn" class="ghost-btn">回到首页</button>
+          </div>
+          <p id="share-status" class="share-status" aria-live="polite"></p>
         </div>
-
-        <h3 id="result-dimensions-title">十五维度评分</h3>
-        <ul id="dimension-list" class="dimension-list"></ul>
-
-        <h3 id="result-tip-title">友情提示</h3>
-        <p id="result-tip-content" class="muted"></p>
-
-        <h3 id="result-author-title">作者的话</h3>
-        <div id="result-author-lines" class="muted-block"></div>
-
-        <div class="action-row">
-          <button id="share-image-btn" class="ghost-btn">生成分享图</button>
-          <button id="restart-btn" class="primary-btn">重新测试</button>
-          <button id="result-home-btn" class="ghost-btn">回到首页</button>
-        </div>
-        <p id="share-status" class="share-status" aria-live="polite"></p>
       </section>
     </main>
 

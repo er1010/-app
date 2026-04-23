@@ -67,6 +67,7 @@ function showScreen(screen) {
   dom.homeScreen.classList.toggle("active", screen === "home");
   dom.testScreen.classList.toggle("active", screen === "test");
   dom.resultScreen.classList.toggle("active", screen === "result");
+  document.body.dataset.screen = screen;
 }
 
 function formatOptionCode(index) {
@@ -117,7 +118,16 @@ function buildOptionButton(question, option, optionIndex) {
   const button = document.createElement("button");
   button.type = "button";
   button.className = "option-btn";
-  button.textContent = `${formatOptionCode(optionIndex)} ${option.label}`;
+
+  const code = document.createElement("span");
+  code.className = "option-index";
+  code.textContent = formatOptionCode(optionIndex);
+
+  const text = document.createElement("span");
+  text.className = "option-text";
+  text.textContent = option.label;
+
+  button.append(code, text);
   button.addEventListener("click", () => {
     state.flowEngine.answerQuestion(question.id, option.value);
     renderTest();
