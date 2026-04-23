@@ -48,7 +48,7 @@ function drawRoundedRect(ctx, x, y, width, height, radius) {
   ctx.closePath();
 }
 
-export async function downloadResultShareImage({ result, imageUrl }) {
+export async function downloadResultShareImage({ result, imageUrl, title = "人格测试结果" }) {
   const canvas = document.createElement("canvas");
   canvas.width = 1080;
   canvas.height = 1920;
@@ -63,7 +63,7 @@ export async function downloadResultShareImage({ result, imageUrl }) {
 
   ctx.fillStyle = "#111827";
   ctx.font = "bold 52px 'Microsoft YaHei', sans-serif";
-  ctx.fillText("SBTI 人格测试结果", 80, 120);
+  ctx.fillText(title, 80, 120);
 
   ctx.font = "34px 'Microsoft YaHei', sans-serif";
   ctx.fillStyle = "#334155";

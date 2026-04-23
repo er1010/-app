@@ -1,162 +1,340 @@
-﻿{
+{
   "regularQuestions": [
     {
-      "id": "q1",
-      "dim": "A1",
-      "text": "老师布置新任务时，你通常？",
+      "id": "cur_1",
+      "dim": "CUR",
+      "text": "看到一个从没接触过的新玩具、新实验或新知识时，你通常会？",
       "options": [
-        { "label": "先拖一拖，等催了再说", "value": 1 },
-        { "label": "看心情完成", "value": 2 },
-        { "label": "主动安排时间先做完", "value": 3 }
+        { "label": "不太想碰，别人玩我看看就好", "value": 1 },
+        { "label": "别人带着我时会试一下", "value": 2 },
+        { "label": "会主动问这是什么、怎么玩", "value": 3 },
+        { "label": "忍不住想自己研究透，还会继续追问为什么", "value": 4 }
       ]
     },
     {
-      "id": "q2",
-      "dim": "A1",
-      "text": "遇到不会的题，你更像？",
+      "id": "cur_2",
+      "dim": "CUR",
+      "text": "东西坏了或拼装卡住时，你更像哪种反应？",
       "options": [
-        { "label": "先放弃，等别人讲", "value": 1 },
-        { "label": "问同学后再做", "value": 2 },
-        { "label": "会主动查资料或请教老师直到弄懂", "value": 3 }
+        { "label": "先放着，等别人来处理", "value": 1 },
+        { "label": "试一下，不行就算了", "value": 2 },
+        { "label": "会自己找办法拆开看看", "value": 3 },
+        { "label": "会一边试一边问原因，非得搞明白不可", "value": 4 }
       ]
     },
     {
-      "id": "q3",
-      "dim": "A2",
-      "text": "放学后的作业节奏是？",
+      "id": "cur_3",
+      "dim": "CUR",
+      "text": "老师讲到课本外的新内容时，你一般会？",
       "options": [
-        { "label": "能拖到最后一刻就拖", "value": 1 },
-        { "label": "分段完成，偶尔卡住", "value": 2 },
-        { "label": "先难后易，按计划做完", "value": 3 }
+        { "label": "听过就过去了", "value": 1 },
+        { "label": "觉得有点意思，但不一定继续想", "value": 2 },
+        { "label": "课后还会再问几句", "value": 3 },
+        { "label": "会主动找书、找视频或自己继续查", "value": 4 }
       ]
     },
     {
-      "id": "q4",
-      "dim": "A2",
-      "text": "需要抄写或背诵时，你会？",
+      "id": "emo_1",
+      "dim": "EMO",
+      "text": "被老师提醒或批评时，你更常见的状态是？",
       "options": [
-        { "label": "经常漏项", "value": 1 },
-        { "label": "基本完成", "value": 2 },
-        { "label": "按要求完整完成并自查", "value": 3 }
+        { "label": "一下就很上头，半天缓不过来", "value": 1 },
+        { "label": "会难受一阵，需要人安慰", "value": 2 },
+        { "label": "心里会有波动，但能慢慢稳住", "value": 3 },
+        { "label": "能先听进去，再想怎么调整", "value": 4 }
       ]
     },
     {
-      "id": "q5",
-      "dim": "A3",
-      "text": "上课时注意力情况？",
+      "id": "emo_2",
+      "dim": "EMO",
+      "text": "原本计划好的事情突然变了，你通常会？",
       "options": [
-        { "label": "经常走神", "value": 1 },
-        { "label": "偶尔分心", "value": 2 },
-        { "label": "大多时候能专注听讲", "value": 3 }
+        { "label": "明显烦躁或闹情绪", "value": 1 },
+        { "label": "需要很久才能接受", "value": 2 },
+        { "label": "会不开心，但能逐渐转过来", "value": 3 },
+        { "label": "能比较快调整，换个办法继续", "value": 4 }
       ]
     },
     {
-      "id": "q6",
-      "dim": "A3",
-      "text": "老师提问时，你通常？",
+      "id": "emo_3",
+      "dim": "EMO",
+      "text": "和朋友闹别扭后，你更接近哪种处理方式？",
       "options": [
-        { "label": "尽量躲开", "value": 1 },
-        { "label": "点到就答", "value": 2 },
-        { "label": "会主动举手表达", "value": 3 }
+        { "label": "容易越想越气，直接爆掉", "value": 1 },
+        { "label": "会委屈很久，不太想说", "value": 2 },
+        { "label": "冷静一会后能说清楚", "value": 3 },
+        { "label": "会先稳住自己，再想办法把事解决", "value": 4 }
       ]
     },
     {
-      "id": "q7",
-      "dim": "S1",
-      "text": "在班里和新同学相处时，你更常？",
+      "id": "soc_1",
+      "dim": "SOC",
+      "text": "到一个新班级、新兴趣班或新小组时，你通常会？",
       "options": [
-        { "label": "不太说话", "value": 1 },
-        { "label": "熟悉后再聊", "value": 2 },
-        { "label": "主动打招呼并一起玩", "value": 3 }
+        { "label": "尽量不说话，先躲在一边", "value": 1 },
+        { "label": "等别人先来找我", "value": 2 },
+        { "label": "会慢慢和身边的人聊起来", "value": 3 },
+        { "label": "很快就能主动打招呼、融进去", "value": 4 }
       ]
     },
     {
-      "id": "q8",
-      "dim": "S1",
-      "text": "小组合作时，你更像？",
+      "id": "soc_2",
+      "dim": "SOC",
+      "text": "课间或自由活动时，你一般更像？",
       "options": [
-        { "label": "跟着别人走", "value": 1 },
-        { "label": "完成自己部分", "value": 2 },
-        { "label": "会组织分工和沟通", "value": 3 }
+        { "label": "更喜欢自己待着", "value": 1 },
+        { "label": "有熟人才会一起玩", "value": 2 },
+        { "label": "常能加入大家，也愿意聊天", "value": 3 },
+        { "label": "常常是我把人组起来一起玩", "value": 4 }
       ]
     },
     {
-      "id": "q9",
-      "dim": "S2",
-      "text": "老师不在教室时，你通常？",
+      "id": "soc_3",
+      "dim": "SOC",
+      "text": "小组活动需要发言、展示或协调时，你通常会？",
+      "options": [
+        { "label": "尽量少说，最好别轮到我", "value": 1 },
+        { "label": "被点到才说几句", "value": 2 },
+        { "label": "可以正常表达自己的想法", "value": 3 },
+        { "label": "会主动带节奏、让大家都参与", "value": 4 }
+      ]
+    },
+    {
+      "id": "foc_1",
+      "dim": "FOC",
+      "text": "做一项需要耐心的任务，比如抄写、拼装或练习时，你会？",
+      "options": [
+        { "label": "没多久就想换别的", "value": 1 },
+        { "label": "能坚持一会，但很容易分心", "value": 2 },
+        { "label": "大多数时候能做完", "value": 3 },
+        { "label": "会稳稳做下去，直到收尾", "value": 4 }
+      ]
+    },
+    {
+      "id": "foc_2",
+      "dim": "FOC",
+      "text": "上课听讲时，你的注意力更接近？",
+      "options": [
+        { "label": "经常走神，脑子早跑了", "value": 1 },
+        { "label": "偶尔会飘，需要提醒", "value": 2 },
+        { "label": "多数时候能跟上老师", "value": 3 },
+        { "label": "能比较稳定地听完、记住重点", "value": 4 }
+      ]
+    },
+    {
+      "id": "foc_3",
+      "dim": "FOC",
+      "text": "遇到一道有点难的题时，你通常会？",
+      "options": [
+        { "label": "很快放弃，想跳过去", "value": 1 },
+        { "label": "试一下，不行就等别人讲", "value": 2 },
+        { "label": "会继续想一会，争取做出来", "value": 3 },
+        { "label": "会反复试不同方法，直到有进展", "value": 4 }
+      ]
+    },
+    {
+      "id": "cre_1",
+      "dim": "CRE",
+      "text": "画画、写故事、做手工时，你更像？",
+      "options": [
+        { "label": "更喜欢照着样子来", "value": 1 },
+        { "label": "会改一点点自己的想法", "value": 2 },
+        { "label": "经常有新点子想加进去", "value": 3 },
+        { "label": "脑洞很多，常把作品做得很有个人味", "value": 4 }
+      ]
+    },
+    {
+      "id": "cre_2",
+      "dim": "CRE",
+      "text": "老师说“这个题还可以怎么做”时，你通常会？",
+      "options": [
+        { "label": "只会想到最普通的做法", "value": 1 },
+        { "label": "在提醒下能想到别的方法", "value": 2 },
+        { "label": "会主动试试不同角度", "value": 3 },
+        { "label": "常常一下就蹦出让人眼前一亮的办法", "value": 4 }
+      ]
+    },
+    {
+      "id": "cre_3",
+      "dim": "CRE",
+      "text": "平时玩角色扮演、编故事或发明游戏规则时，你会？",
+      "options": [
+        { "label": "不太会想这些", "value": 1 },
+        { "label": "有人带着我时可以跟上", "value": 2 },
+        { "label": "会自己补很多设定和情节", "value": 3 },
+        { "label": "经常能自己开一个完整的小世界", "value": 4 }
+      ]
+    },
+    {
+      "id": "ind_1",
+      "dim": "IND",
+      "text": "面对自己的作业或准备任务时，你更像？",
+      "options": [
+        { "label": "需要别人一直盯着我", "value": 1 },
+        { "label": "提醒后才能开始", "value": 2 },
+        { "label": "大多数时候能自己安排", "value": 3 },
+        { "label": "会主动规划顺序，基本不用催", "value": 4 }
+      ]
+    },
+    {
+      "id": "ind_2",
+      "dim": "IND",
+      "text": "遇到一个自己要做决定的小事时，你通常会？",
+      "options": [
+        { "label": "完全等别人告诉我怎么做", "value": 1 },
+        { "label": "先问大人或同学意见", "value": 2 },
+        { "label": "会自己想清楚再决定", "value": 3 },
+        { "label": "能独立判断，还会为自己的决定负责", "value": 4 }
+      ]
+    },
+    {
+      "id": "ind_3",
+      "dim": "IND",
+      "text": "忘带东西、做漏步骤这种情况发生时，你更常？",
+      "options": [
+        { "label": "第一反应是慌，等别人帮忙补救", "value": 1 },
+        { "label": "会先求助，自己办法不多", "value": 2 },
+        { "label": "能想办法补上，大部分时候能解决", "value": 3 },
+        { "label": "会自己查漏补缺，下次还会主动避免再犯", "value": 4 }
+      ]
+    },
+    {
+      "id": "res_1",
+      "dim": "RES",
+      "text": "比赛输了、考得不理想或作品没被选上时，你通常会？",
+      "options": [
+        { "label": "一下就泄气，觉得不想再碰了", "value": 1 },
+        { "label": "会难受很久，恢复比较慢", "value": 2 },
+        { "label": "会沮丧，但还能重新开始", "value": 3 },
+        { "label": "会马上想下次怎么做得更好", "value": 4 }
+      ]
+    },
+    {
+      "id": "res_2",
+      "dim": "RES",
+      "text": "碰到连续几次都做不顺的事情时，你更接近？",
+      "options": [
+        { "label": "很容易彻底不想做了", "value": 1 },
+        { "label": "需要别人拉一把才愿意继续", "value": 2 },
+        { "label": "会停一下，再继续试", "value": 3 },
+        { "label": "会把失败当线索，一路调到能做成", "value": 4 }
+      ]
+    },
+    {
+      "id": "res_3",
+      "dim": "RES",
+      "text": "如果有人否定你的想法或笑你做得不够好，你更常？",
+      "options": [
+        { "label": "一下被打击住，后面都不想试了", "value": 1 },
+        { "label": "心里会卡很久", "value": 2 },
+        { "label": "会不舒服，但还能调整回来", "value": 3 },
+        { "label": "会吸收有用部分，然后继续做自己的", "value": 4 }
+      ]
+    },
+    {
+      "id": "emp_1",
+      "dim": "EMP",
+      "text": "看到同学明显难过、受委屈或被冷落时，你通常会？",
+      "options": [
+        { "label": "不太会留意到", "value": 1 },
+        { "label": "会看见，但不太知道怎么做", "value": 2 },
+        { "label": "会安慰一下或陪一会", "value": 3 },
+        { "label": "会主动理解对方、想办法让他舒服一点", "value": 4 }
+      ]
+    },
+    {
+      "id": "emp_2",
+      "dim": "EMP",
+      "text": "小组合作里有人跟不上节奏时，你更像？",
+      "options": [
+        { "label": "觉得拖后腿就算了", "value": 1 },
+        { "label": "会提醒一下，但不太会管", "value": 2 },
+        { "label": "愿意等等对方，帮一点忙", "value": 3 },
+        { "label": "会想怎么让每个人都参与进来", "value": 4 }
+      ]
+    },
+    {
+      "id": "emp_3",
+      "dim": "EMP",
+      "text": "当家里人、老师或朋友情绪不太对时，你通常会？",
+      "options": [
+        { "label": "不太能感受到变化", "value": 1 },
+        { "label": "能感觉到，但不知道怎么回应", "value": 2 },
+        { "label": "会注意语气和反应，尽量别让情况更糟", "value": 3 },
+        { "label": "会比较自然地照顾气氛，也懂得安慰别人", "value": 4 }
+      ]
+    },
+    {
+      "id": "rul_1",
+      "dim": "RUL",
+      "text": "排队、课堂纪律或公共约定这种规则，你通常会？",
+      "options": [
+        { "label": "能钻空子就钻空子", "value": 1 },
+        { "label": "有人盯着时才比较守", "value": 2 },
+        { "label": "大多数时候会按规则来", "value": 3 },
+        { "label": "就算没人看见，也会自觉守住", "value": 4 }
+      ]
+    },
+    {
+      "id": "rul_2",
+      "dim": "RUL",
+      "text": "老师不在或场面有点乱时，你更接近哪种反应？",
       "options": [
         { "label": "容易跟着起哄", "value": 1 },
-        { "label": "看周围再决定", "value": 2 },
-        { "label": "会自觉保持秩序", "value": 3 }
+        { "label": "看大家怎么做再决定", "value": 2 },
+        { "label": "自己会尽量保持分寸", "value": 3 },
+        { "label": "会提醒同伴别太过，还想把秩序拉回来", "value": 4 }
       ]
     },
     {
-      "id": "q10",
-      "dim": "S2",
-      "text": "排队或做操时，你会？",
+      "id": "rul_3",
+      "dim": "RUL",
+      "text": "遇到一个你不太喜欢的规定时，你通常会？",
       "options": [
-        { "label": "总想插队或偷懒", "value": 1 },
-        { "label": "偶尔不规范", "value": 2 },
-        { "label": "基本按规则来", "value": 3 }
+        { "label": "先想着怎么绕过去", "value": 1 },
+        { "label": "嘴上不服，做起来也容易打折", "value": 2 },
+        { "label": "虽然不喜欢，但还是会执行", "value": 3 },
+        { "label": "会先按规则做，再想能不能提更好的建议", "value": 4 }
       ]
     },
     {
-      "id": "q11",
-      "dim": "L1",
-      "text": "整理书包和课桌时，你通常？",
+      "id": "adp_1",
+      "dim": "ADP",
+      "text": "换老师、换座位、换搭档或换教室这种变化出现时，你通常会？",
       "options": [
-        { "label": "很乱，常找不到东西", "value": 1 },
-        { "label": "偶尔整理", "value": 2 },
-        { "label": "每天都能收拾得比较整齐", "value": 3 }
+        { "label": "明显不适应，很久都缓不过来", "value": 1 },
+        { "label": "需要一段时间才能进入状态", "value": 2 },
+        { "label": "会别扭一下，但慢慢能适应", "value": 3 },
+        { "label": "很快就能重新找到自己的节奏", "value": 4 }
       ]
     },
     {
-      "id": "q12",
-      "dim": "L1",
-      "text": "早晨上学准备情况？",
+      "id": "adp_2",
+      "dim": "ADP",
+      "text": "原本安排好的活动临时改了玩法，你更像？",
       "options": [
-        { "label": "常忘带作业或用品", "value": 1 },
-        { "label": "偶尔遗漏", "value": 2 },
-        { "label": "能提前准备好", "value": 3 }
+        { "label": "会很抗拒，想按原来的来", "value": 1 },
+        { "label": "先有点卡，再看着办", "value": 2 },
+        { "label": "能接受变化，边做边调整", "value": 3 },
+        { "label": "常常还能顺着新情况找到更有意思的做法", "value": 4 }
+      ]
+    },
+    {
+      "id": "adp_3",
+      "dim": "ADP",
+      "text": "开始一个不熟悉的新任务时，你通常会？",
+      "options": [
+        { "label": "很容易慌，不知道从哪下手", "value": 1 },
+        { "label": "要看别人做过才敢动", "value": 2 },
+        { "label": "会一边试一边找感觉", "value": 3 },
+        { "label": "能比较自然地边摸索边建立自己的方法", "value": 4 }
       ]
     }
   ],
-  "specialQuestions": [
-    {
-      "id": "game_gate_q1",
-      "special": true,
-      "kind": "game_gate",
-      "text": "周末最想做的事是？",
-      "options": [
-        { "label": "复习+完成任务", "value": 1 },
-        { "label": "户外运动或社交活动", "value": 2 },
-        { "label": "打游戏", "value": 3 },
-        { "label": "看动画或刷短视频", "value": 4 }
-      ]
-    },
-    {
-      "id": "game_gate_q2",
-      "special": true,
-      "kind": "game_trigger",
-      "text": "如果开始打游戏，你更接近？",
-      "options": [
-        { "label": "玩一会就停，不影响作息", "value": 1 },
-        { "label": "再来一局，常常停不下来", "value": 2 }
-      ]
-    }
-  ],
+  "specialQuestions": [],
   "flow": {
-    "insertQuestionId": "game_gate_q1",
-    "insertMode": "random_after_first",
-    "conditionalQuestions": [
-      {
-        "id": "game_gate_q2",
-        "when": {
-          "questionId": "game_gate_q1",
-          "equals": 3
-        },
-        "insertAfter": "game_gate_q1"
-      }
-    ]
+    "insertQuestionId": null,
+    "insertMode": "none",
+    "conditionalQuestions": []
   }
 }

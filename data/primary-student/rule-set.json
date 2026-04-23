@@ -1,24 +1,15 @@
-﻿{
-  "similarityDistanceDenominator": 12,
-  "fallbackSimilarityThreshold": 58,
-  "specialOverrides": [
-    {
-      "type": "force_result",
-      "when": {
-        "questionId": "game_gate_q2",
-        "equals": 2
-      },
-      "resultCode": "GAME+",
-      "keepBestNormalAsSecondary": true,
-      "badgeTemplate": "匹配度 100%",
-      "note": "隐藏分支已触发：游戏沉浸模式接管，常规类型仅供参考。"
-    }
-  ],
+{
+  "similarityDistanceDenominator": 90,
+  "secondaryTypeRule": {
+    "type": "distance_gap",
+    "maxDistanceGap": 6
+  },
+  "specialOverrides": [],
   "fallbackRule": {
     "type": "min_similarity",
-    "threshold": 58,
-    "fallbackResultCode": "WILD",
-    "badgeTemplate": "标准模板最高匹配仅 {similarity}%",
-    "note": "当前状态变化较快，系统将你识别为“未知潜力股”。"
+    "threshold": 68,
+    "fallbackResultCode": "MIX",
+    "badgeTemplate": "主模板最高匹配度 {similarity}%",
+    "note": "当前画像更像混合型结果，建议重点观察 10 维分数的高低组合。"
   }
 }
